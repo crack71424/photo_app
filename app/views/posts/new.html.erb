@@ -1,7 +1,7 @@
 投稿の新規登録
 
 <%= form_for(@post) do |f| %>
-  <%= render 'shared/error_messages', obkect: f.object %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.text_area :name, placeholder: "新しい投稿のタイトル" %>
   <%= f.text_area :content, placeholder: "新しい投稿の内容" %>

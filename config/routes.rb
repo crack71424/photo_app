@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   resources :toppages
   resources :users
-  resources :posts, only: [:create, :destroy]
+  resources :posts
 end
