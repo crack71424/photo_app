@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @post = @user.posts
+    @post = Post.find(params[:id])
   end
 
   def destroy
