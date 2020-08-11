@@ -1,0 +1,7 @@
+<h1>投稿の詳細</h1>
+
+<%= @user.name %>からの投稿です
+<%= @post.name %>
+<%= @post.content %>
+
+Posted <%= time_ago_in_words(@post.created_at) %> ago.

@@ -1,7 +1,7 @@
 <h1>All posts</h1>
 
 <% @posts.each do |post| %>
-  <%= link_to post.name %>
+  <%= link_to post.name, post %>
 <% end %>
 
 <%= link_to "投稿の登録", new_post_path %>
