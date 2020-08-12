@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "ユーザー登録に成功しました"
-      redirect_back_or user
+      redirect_to root_url
     else
       render 'new'
     end

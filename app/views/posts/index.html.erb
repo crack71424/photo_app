@@ -1,7 +1,15 @@
 <h1>All posts</h1>
 
+<a class="btn btn-primary" href="#" role="button">Link</a>
+<button class="btn btn-primary" type="submit">Button</button>
+<input class="btn btn-danger" type="button" value="Input">
+<input class="btn btn-info" type="submit" value="Submit">
+<input class="btn btn-dark" type="reset" value="Reset">
+
 <% @posts.each do |post| %>
   <%= link_to post.name, post %>
 <% end %>
+
+
 
 <%= link_to "投稿の登録", new_post_path %>
