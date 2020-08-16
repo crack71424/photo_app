@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   resources :toppages
   resources :users
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:index, :create, :show]
+  end
+  
 end

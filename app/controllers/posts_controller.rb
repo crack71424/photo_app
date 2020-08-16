@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy, :show]
 
   def create
     @post = current_user.posts.build(post_params)
@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    #@posts = current_user.posts.all
+    #@post = current_user.post.new #新規投稿を行うの際のformパラメーター用
   end
 
   def new
@@ -22,6 +24,9 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = Post.find(params[:id])
+    @comments = @post.comments
+    #@comment = current_user.comments.new
+    @comment = Comment.new
   end
 
   def destroy
