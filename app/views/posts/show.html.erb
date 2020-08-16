@@ -5,3 +5,14 @@
 <%= @post.content %>
 
 Posted <%= time_ago_in_words(@post.created_at) %> ago.
+
+<h2>コメント一覧</h2>
+
+<% @comments.each do |comment| %>
+  <%= comment.comment_content %>
+<% end %>
+
+<%= form_with(model: [@post, @comment], local: true) do |f| %>
+  <%= f.text_field :comment_content %>
+  <%= f.submit "コメントする", class: "btn btn-primary" %>
+<% end %>
